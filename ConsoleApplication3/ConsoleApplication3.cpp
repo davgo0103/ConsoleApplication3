@@ -21,10 +21,29 @@ void Select_Sort(int a[], int n) {
     }
 }
 
+void Insert_Sort(int a[], int n) {
+    int i, j,up;
+    for (i =1 ; i <n ; i++) {
+        up = a[i];
+        j = i;
+        while (j>0 && a[j-1]>up)
+        {
+            a[j] = a[j - 1];
+            j--;
+        }
+        a[j] = up;
+
+        for (j = 0; j < n; j++)
+            cout << a[j] << " ";
+        cout << endl;
+    }
+}
+
+
 int main()
 {
     int abc[] = { 37,61,19,41,81,25,56,41,49 };
-    Select_Sort(abc, 9);
+    Insert_Sort(abc, 9);
     std::cout << "Hello World!\n";
 }
 
